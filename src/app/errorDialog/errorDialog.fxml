@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="app.errorDialog.ErrorDialogController">
+   <children>
+      <ImageView fitHeight="63.0" fitWidth="54.0" layoutX="33.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/alert2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="111.0" layoutY="27.0" text="ERROR!">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtDesc" layoutX="33.0" layoutY="112.0" text="Descripción...">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAceptar" layoutX="122.0" layoutY="161.0" onAction="#aceptarAction" text="Aceptar" />
+   </children>
+</AnchorPane>

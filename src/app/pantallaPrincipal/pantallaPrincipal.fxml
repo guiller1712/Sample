@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="panePrincipal" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.pantallaPrincipal.PantallaPrincipalController">
+   <children>
+      <SplitPane fx:id="splitPane" dividerPositions="0.29" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane fx:id="panIzq" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="170.0">
+                     <children>
+                        <ImageView fx:id="img" fitHeight="150.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <ColorAdjust brightness="0.23" hue="0.53" />
+                           </effect>
+                           <image>
+                              <Image url="@../resources/images/imagenGym.jpg" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="btnInicio" maxWidth="1.7976931348623157E308" stylesheets="@../resources/Estilo.css" text="Inicio" />
+                        <JFXButton fx:id="btnAltaCliente" maxWidth="1.7976931348623157E308" text="Alta cliente" />
+                        <JFXButton fx:id="btnCatalogoCliente" maxWidth="1.7976931348623157E308" text="Catálogo de cliente" />
+                        <JFXButton fx:id="btnReporteAcu" maxWidth="1.7976931348623157E308" text="Reporte acumulado" />
+                        <JFXButton fx:id="btnReporteGen" maxWidth="1.7976931348623157E308" text="Reporte general" />
+                        <JFXButton fx:id="config" maxWidth="1.7976931348623157E308" text="Configuración" />
+                        <JFXButton maxWidth="1.7976931348623157E308" text="Cerrar sesión" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="paneDer" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
