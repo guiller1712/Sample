@@ -18,9 +18,9 @@
       </ImageView>
       <JFXTextField fx:id="txtUsuario" layoutX="167.0" layoutY="117.0" promptText="Nombre de usuario" styleClass="text_app" />
       <Text layoutX="194.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textb_app" text="Inicio de sesión" />
-      <JFXTextField fx:id="txtContra" layoutX="167.0" layoutY="170.0" promptText="Contraseña" styleClass="text_app" />
-      <Text layoutX="171.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texterr_app" text="Los datos son incorrectos" visible="false" />
+      <Text fx:id="textError" fill="#bf1919" layoutX="171.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texterr_app" text="Los datos son incorrectos" visible="false" />
       <Text layoutX="149.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textnp_app" text="¿No puede acceder a su cuenta?" />
       <JFXButton fx:id="btnInicioSesion" layoutX="193.0" layoutY="222.0" onAction="#autenticar" style="-fx-background-color: #0080ff;" styleClass="button_app" text="Iniciar sesión" />
+      <JFXPasswordField fx:id="txtContra" layoutX="167.0" layoutY="174.0" promptText="Contraseña" />
    </children>
 </AnchorPane>

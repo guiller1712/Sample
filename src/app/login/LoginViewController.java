@@ -7,6 +7,7 @@ package app.login;
 
 import app.loginModel.Authentication;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.Modality;
 
@@ -31,6 +33,7 @@ public class LoginViewController implements Initializable {
     //Prueba
     Authentication au;
     Stage error_stage;
+    Stage app_stage;
     
     URL urlHome;
     URL urlError;
@@ -41,9 +44,8 @@ public class LoginViewController implements Initializable {
     Scene home_page_scene;
     Scene error_page_scene;
     
-    Stage app_stage;
     @FXML
-    private JFXTextField txtContra;
+    private JFXPasswordField txtContra;
 
     @FXML
     private JFXButton btnInicioSesion;
@@ -51,26 +53,30 @@ public class LoginViewController implements Initializable {
     @FXML
     private JFXTextField txtUsuario;
     
+    @FXML
+    private Text textError;
+    
     public LoginViewController() throws IOException{
         au = new Authentication();
         error_stage = new Stage();
-        initCurrentDialog();
+        initHomeDialog();
         initErrorDialog();
     }
     
     @FXML
-    private void autenticar(ActionEvent event) throws IOException{
+    private void autenticar(ActionEvent event) throws IOException{ //Conectar con BD
         String name = txtUsuario.getText();
         String contra = txtContra.getText();
         
         app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         if(!au.userExists(name, contra)){
             error_stage.showAndWait();
+            textError.setVisible(true);
             System.out.println("Error...()");
             return;
         }
-        
-        app_stage.hide();
+        textError.setVisible(false);
+        app_stage.close();
         app_stage.setScene(home_page_scene);
         app_stage.show();
         
@@ -85,7 +91,7 @@ public class LoginViewController implements Initializable {
         error_stage.initModality(Modality.APPLICATION_MODAL); 
     }
     
-    private void initCurrentDialog() throws IOException{
+    private void initHomeDialog() throws IOException{
         urlHome = new File("src/app/pantallaPrincipal/pantallaPrincipal.fxml").toURL();
         home_page_parent = FXMLLoader.load(urlHome);
         home_page_scene = new Scene(home_page_parent);

@@ -9,24 +9,32 @@ import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
-import com.jfoenix.controls.JFXDrawer;
-import com.jfoenix.controls.JFXHamburger;
-import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.File;
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
  * @author guill
  */
 public class PantallaPrincipalController implements Initializable {
+    
+    Stage app_stage;
+    
+    Stage login_stage;
+    URL urlLogin;
+    Parent login_page_parent;
+    Scene login_page_scene;
+    
    @FXML
     private ImageView img;
 
@@ -59,9 +67,27 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private JFXButton config;
+    
+    public PantallaPrincipalController() throws IOException{
+       initLoginDialog();
+    }
+    
+    @FXML
+    private void cerrarSesion(ActionEvent event) throws IOException {
+        app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        login_page_parent = FXMLLoader.load(urlLogin);
+        login_page_scene = new Scene(login_page_parent);
+        app_stage.close();
+        app_stage.setScene(login_page_scene);
+        app_stage.show();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+    }
+    
+    private void initLoginDialog() throws IOException{
+        urlLogin = new File("src/app/login/loginView.fxml").toURL();
     }
     
     
