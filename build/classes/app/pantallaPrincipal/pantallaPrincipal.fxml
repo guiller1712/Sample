@@ -31,6 +31,7 @@
                         <JFXButton fx:id="btnReporteAcu" maxWidth="1.7976931348623157E308" text="Reporte acumulado" />
                         <JFXButton fx:id="btnReporteGen" maxWidth="1.7976931348623157E308" text="Reporte general" />
                         <JFXButton fx:id="config" maxWidth="1.7976931348623157E308" text="Configuración" />
+                        <JFXButton maxWidth="1.7976931348623157E308" text="Cerrar sesión" />
                      </children>
                   </VBox>
                </children>

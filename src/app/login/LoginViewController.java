@@ -77,7 +77,7 @@ public class LoginViewController implements Initializable {
     }
     
     private void initErrorDialog() throws IOException{
-        urlError = new File("D:\\Netbeans\\Sample\\src\\app\\errorDialog\\errorDialog.fxml").toURL();
+        urlError = new File("src/app/errorDialog/errorDialog.fxml").toURL();
         error_page_parent = FXMLLoader.load(urlError);
         error_page_scene = new Scene(error_page_parent);
         error_stage.initOwner(app_stage);
@@ -86,7 +86,7 @@ public class LoginViewController implements Initializable {
     }
     
     private void initCurrentDialog() throws IOException{
-        urlHome = new File("D:\\Netbeans\\Sample\\src\\app\\pantallaPrincipal\\pantallaPrincipal.fxml").toURL();
+        urlHome = new File("src/app/pantallaPrincipal/pantallaPrincipal.fxml").toURL();
         home_page_parent = FXMLLoader.load(urlHome);
         home_page_scene = new Scene(home_page_parent);
     }
