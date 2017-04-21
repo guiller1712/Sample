@@ -27,7 +27,7 @@
                            </image>
                         </ImageView>
                         <JFXButton fx:id="btnInicio" maxWidth="1.7976931348623157E308" stylesheets="@../resources/Estilo.css" text="Inicio" />
-                        <JFXButton fx:id="btnAltaCliente" maxWidth="1.7976931348623157E308" text="Alta cliente" />
+                        <JFXButton fx:id="btnAltaCliente" maxWidth="1.7976931348623157E308" onAction="#altaCliente" text="Alta cliente" />
                         <JFXButton fx:id="btnCatalogoCliente" maxWidth="1.7976931348623157E308" text="Catálogo de cliente" />
                         <JFXButton fx:id="btnReporteAcu" maxWidth="1.7976931348623157E308" text="Reporte acumulado" />
                         <JFXButton fx:id="btnReporteGen" maxWidth="1.7976931348623157E308" text="Reporte general" />

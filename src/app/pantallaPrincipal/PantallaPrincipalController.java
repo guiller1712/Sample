@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 /**
  * FXML Controller class
@@ -34,6 +35,11 @@ public class PantallaPrincipalController implements Initializable {
     URL urlLogin;
     Parent login_page_parent;
     Scene login_page_scene;
+    
+    Stage alta_stage;
+    URL urlAlta;
+    Parent alta_page_parent;
+    Scene alta_page_scene;
     
    @FXML
     private ImageView img;
@@ -70,6 +76,7 @@ public class PantallaPrincipalController implements Initializable {
     
     public PantallaPrincipalController() throws IOException{
        initLoginDialog();
+       initAltaDialog();
     }
     
     @FXML
@@ -81,6 +88,15 @@ public class PantallaPrincipalController implements Initializable {
         app_stage.setScene(login_page_scene);
         app_stage.show();
     }
+    
+    @FXML
+    private void altaCliente(ActionEvent event) throws IOException {
+        app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.close();
+        app_stage.setScene(alta_page_scene);
+        app_stage.show();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -88,6 +104,14 @@ public class PantallaPrincipalController implements Initializable {
     
     private void initLoginDialog() throws IOException{
         urlLogin = new File("src/app/login/loginView.fxml").toURL();
+    }
+    
+    private void initAltaDialog() throws IOException{
+        urlAlta = new File("src/app/altaCliente/altaCliente.fxml").toURL();
+        alta_page_parent = FXMLLoader.load(urlAlta);
+        alta_page_scene = new Scene(alta_page_parent);
+        
+        
     }
     
     

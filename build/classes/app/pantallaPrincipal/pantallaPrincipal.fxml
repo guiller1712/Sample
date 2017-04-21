@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import com.jfoenix.controls.*?>
@@ -11,13 +12,13 @@
 
 <AnchorPane id="AnchorPane" fx:id="panePrincipal" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.pantallaPrincipal.PantallaPrincipalController">
    <children>
-      <SplitPane fx:id="splitPane" dividerPositions="0.29" prefHeight="400.0" prefWidth="600.0">
+      <SplitPane fx:id="splitPane" dividerPositions="0.2909698996655518" prefHeight="400.0" prefWidth="600.0">
         <items>
           <AnchorPane fx:id="panIzq" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="170.0">
+                  <VBox maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="186.0">
                      <children>
-                        <ImageView fx:id="img" fitHeight="150.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="img" fitHeight="96.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
                            <effect>
                               <ColorAdjust brightness="0.23" hue="0.53" />
                            </effect>
@@ -26,7 +27,7 @@
                            </image>
                         </ImageView>
                         <JFXButton fx:id="btnInicio" maxWidth="1.7976931348623157E308" stylesheets="@../resources/Estilo.css" text="Inicio" />
-                        <JFXButton fx:id="btnAltaCliente" maxWidth="1.7976931348623157E308" text="Alta cliente" />
+                        <JFXButton fx:id="btnAltaCliente" maxWidth="1.7976931348623157E308" onAction="#altaCliente" text="Alta cliente" />
                         <JFXButton fx:id="btnCatalogoCliente" maxWidth="1.7976931348623157E308" text="Catálogo de cliente" />
                         <JFXButton fx:id="btnReporteAcu" maxWidth="1.7976931348623157E308" text="Reporte acumulado" />
                         <JFXButton fx:id="btnReporteGen" maxWidth="1.7976931348623157E308" text="Reporte general" />
@@ -36,7 +37,39 @@
                   </VBox>
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="paneDer" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+            <AnchorPane id="AnchorPane" prefHeight="398.0" prefWidth="422.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="14.0" prefHeight="359.0" prefWidth="392.0">
+                     <children>
+                        <Label text="¡BIENVENIDO!">
+                           <font>
+                              <Font size="57.0" />
+                           </font>
+                        </Label>
+                        <Label text="Lealtad de cliente">
+                           <font>
+                              <Font name="Corbel" size="39.0" />
+                           </font>
+                        </Label>
+                        <Label lineSpacing="1.0" prefHeight="76.0" prefWidth="392.0" text="Con este programa se podrá dar de alta clientes para darle seguimiento en el programa de lealtad de cliente" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="84.0" prefWidth="166.0" text="El Gym S.A. de C.V.">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label text="Sistemas Expertos S.A.">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
         </items>
       </SplitPane>
    </children>
