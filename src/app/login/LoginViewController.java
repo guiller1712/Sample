@@ -30,7 +30,7 @@ import javafx.stage.Modality;
  * @author guill
  */
 public class LoginViewController implements Initializable {
-    //Prueba
+    //Otros componentes
     Authentication au;
     Stage error_stage;
     Stage app_stage;
@@ -44,6 +44,7 @@ public class LoginViewController implements Initializable {
     Scene home_page_scene;
     Scene error_page_scene;
     
+    //Componentes de pantalla
     @FXML
     private JFXPasswordField txtContra;
 
